@@ -15,7 +15,7 @@ const TopMenu = () => {
     return (
         <nav className="navbar navbar-expand navbar-dark bg-dark">
             <Link to={"/"} className="navbar-brand">
-            Project
+            CarStore3000
             </Link>
 
             <div className="navbar-nav ml-auto">
