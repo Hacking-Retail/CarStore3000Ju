@@ -1,3 +1,9 @@
+/*Login & Register pages*/
+
+#register > div > form > div > div:nth-child(6) > button {
+    margin-top: 10px;
+}
+
 #login label, #register label {
   display: block;
   margin-top: 10px;

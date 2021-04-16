@@ -55,6 +55,7 @@ const Register = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [role, setRole] = useState("customer");
   const [successful, setSuccessful] = useState(false);
 
   const { message } = useSelector(state => state.message);
@@ -75,6 +76,11 @@ const Register = () => {
     setPassword(password);
   };
 
+  const onChangeRole = (e) => {
+    if (e.target.value)
+      setRole(e.target.id);
+  };
+
   const handleRegister = (e) => {
     e.preventDefault();
 
@@ -83,13 +89,14 @@ const Register = () => {
     form.current.validateAll();
 
     if (checkBtn.current.context._errors.length === 0) {
-      dispatch(register(username, email, password))
-        .then(() => {
-          setSuccessful(true);
-        })
-        .catch(() => {
-          setSuccessful(false);
-        });
+      console.log('role = ' + role)
+        dispatch(register(username, email, password, role))
+          .then(() => {
+            setSuccessful(true);
+          })
+          .catch(() => {
+            setSuccessful(false);
+          });
     }
   };
 
@@ -140,7 +147,20 @@ const Register = () => {
                   validations={[required, vpassword]}
                 />
               </div>
-
+              <div className="form-check">
+                <input className="form-check-input" type="radio" name="flexRadioDefault" id="customer"
+                onChange={onChangeRole} checked/>
+                  <label className="form-check-label" htmlFor="customer">
+                    Compte Client
+                  </label>
+              </div>
+              <div className="form-check">
+                <input className="form-check-input" type="radio" name="flexRadioDefault" id="seller"
+                onChange={onChangeRole}/>
+                  <label className="form-check-label" htmlFor="seller">
+                    Compte Vendeur
+                  </label>
+              </div>
               <div className="form-group">
                 <button className="btn btn-primary btn-block">Sign Up</button>
               </div>

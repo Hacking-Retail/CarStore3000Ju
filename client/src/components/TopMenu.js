@@ -24,9 +24,20 @@ const TopMenu = () => {
                         <li className="nav-item">
                             <Link to={"/profile"} className="nav-link">Profile</Link>
                         </li>
-                        <li className="nav-item">
-                            <Link to={"/user"} className="nav-link">Settings</Link>
-                        </li>
+                        {currentUser.role === 'customer' ? (
+                            <>
+                                <li className="nav-item">
+                                    <Link to={"/tinder"} className="nav-link">Tinder</Link>
+                                </li>
+                                <li className="nav-item">
+                                    <Link to={"/user"} className="nav-link">Settings</Link>
+                                </li>
+                            </>
+                        ) : (
+                            <li className="nav-item">
+                                <Link to={"/profile"} className="nav-link">Clients</Link>
+                            </li>
+                        )}
                         <li className="nav-item">
                             <Link to={"/login"} className="nav-link" onClick={logOut}>LogOut</Link>
                         </li>

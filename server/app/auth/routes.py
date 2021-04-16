@@ -62,7 +62,13 @@ def login():
 
     if check_password_hash(user.password, auth['password']):
         token = user.encode_auth_token(user.public_id)
-        return jsonify({'id': user.public_id, 'name': user.name, 'email': user.email, 'accessToken': token}), 200
+        return jsonify({
+            'id': user.public_id,
+            'name': user.name,
+            'email': user.email,
+            'accessToken': token,
+            'role': user.role
+        }), 200
 
     return jsonify({'message': 'Wrong password.'}), 403
 
@@ -78,7 +84,7 @@ def signup():
             - 401 : Missing parameters
     """
     auth = request.get_json()
-    if not auth or not auth['username'] or not auth['password'] or not auth['email']:
+    if not auth or not auth['username'] or not auth['password'] or not auth['email'] or not auth['role']:
         return jsonify({'message': 'Missing parameters.'}), 401
 
     user = User.query.filter_by(name=auth['username']).first()
@@ -88,7 +94,8 @@ def signup():
             public_id=str(uuid.uuid4()),
             name=auth['username'],
             email=auth['email'],
-            password=generate_password_hash(auth['password'])
+            password=generate_password_hash(auth['password']),
+            role=auth['role']
         )
         db.session.add(user)
         db.session.commit()
