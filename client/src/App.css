@@ -74,6 +74,7 @@
 }
 
 #tinder > div > div.cardContainer {
+  margin-top: 5vh;
   width: 90vw;
   max-width: 260px;
   height: 300px;
