@@ -35,7 +35,7 @@ const TopMenu = () => {
                             </>
                         ) : (
                             <li className="nav-item">
-                                <Link to={"/profile"} className="nav-link">Clients</Link>
+                                <Link to={"/clients"} className="nav-link">Clients</Link>
                             </li>
                         )}
                         <li className="nav-item">

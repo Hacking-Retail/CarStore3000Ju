@@ -37,6 +37,7 @@
 }
 
 #tinder {
+  margin-top: 10vh;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -58,6 +59,7 @@
 }
 
 #tinder>h1 {
+  margin-top: 4vh;
   font-family: 'Damion', cursive;
   color: black;
   text-shadow: 0px 0px 60px 0px rgba(0,0,0,0.30);

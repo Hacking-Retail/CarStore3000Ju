@@ -11,9 +11,14 @@ const getUserBoard = () => {
     return axios.get(API_URL + "user", { headers: authHeader() });
 };
 
+const getUsers = () => {
+    return axios.get(API_URL + "users", { headers: authHeader() });
+};
+
 const UserService = {
   getPublicContent,
-  getUserBoard
+  getUserBoard,
+  getUsers,
 };
 
 export default  UserService;

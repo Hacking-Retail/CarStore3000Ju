@@ -21,6 +21,7 @@ const Home = React.lazy(() => import("./components/Home"));
 const Profile = React.lazy(() => import("./components/Profile"));
 const BoardUser = React.lazy(() => import("./components/BoardUser"));
 const Tinder = React.lazy(() => import("./components/Tinder"));
+const Clients = React.lazy(() => import("./components/Clients"));
 
 // Routes
 const PrivateRoute = React.lazy(() => import('./helpers/PrivateRoute'));
@@ -46,6 +47,7 @@ const App = () => {
             <Route exact path="/register" component={props => <Register {...props}/>} />
             <PrivateRoute exact path="/profile" component={props => <Profile {...props}/>} />
             <PrivateRoute exact path="/user" component={props => <BoardUser {...props}/>} />
+            <PrivateRoute exact path="/clients" component={props => <Clients {...props}/>} />
             <PrivateRoute exact path="/tinder" component={props => <Tinder {...props}/>} />
           </Switch>
         </React.Suspense>
