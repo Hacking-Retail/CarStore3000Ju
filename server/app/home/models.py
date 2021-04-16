@@ -3,6 +3,7 @@
 import csv
 import os
 from app import db
+from sqlalchemy import ForeignKey
 
 
 class Car(db.Model):
@@ -42,7 +43,7 @@ class Car(db.Model):
 
     @staticmethod
     def populate():
-        print('ya')
+        print('len cars = ', len(Car.query.all()))
         if not len(Car.query.all()):
             path = os.getcwd()
             with open(path + '/Dataset-Hackathon.csv', newline='') as csvfile:
@@ -67,3 +68,27 @@ class Car(db.Model):
                     )
                     db.session.add(car)
                 db.session.commit()
+
+
+class TinderAction(db.Model):
+    __tablename__ = 'tinder_action'
+
+    id = db.Column(db.Integer, primary_key=True)
+    customer_id = db.Column(db.Integer, ForeignKey("users.id"), nullable=False)
+    car_id = db.Column(db.Integer, ForeignKey("cars.id"), nullable=False)
+    value = db.Column(db.String(50))
+
+    def __init__(self, customer_id, car_id, value):
+        self.customer_id = customer_id
+        self.car_id = car_id
+        if value == 'right':
+            self.value = 'like'
+        if value == 'left':
+            self.value = 'dislike'
+        if value == 'up':
+            self.value = 'love'
+        if value == 'down':
+            self.value = 'hate'
+
+    def __repr__(self):
+        return f'<id {self.id}: customer {self.customer_id} {self.value} {self.car_id}>'
