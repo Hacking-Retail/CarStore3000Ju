@@ -1,0 +1,241 @@
+#login label, #register label {
+  display: block;
+  margin-top: 10px;
+}
+
+#login .card-container.card, #register .card-container.card {
+  max-width: 350px !important;
+  padding: 40px 40px;
+}
+
+#login .card, #register .card {
+  background-color: #f7f7f7;
+  padding: 20px 25px 30px;
+  margin: 50px auto 25px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  -moz-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+#login .profile-img-card, #register .profile-img-card {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 10px;
+  display: block;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+
+#tinder {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  /* background: linear-gradient(#fff, #999); */
+}
+
+#tinder .fade.show {
+    height:100%
+}
+
+#tinder>div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#tinder>h1 {
+  font-family: 'Damion', cursive;
+  color: black;
+  text-shadow: 0px 0px 60px 0px rgba(0,0,0,0.30);
+}
+
+#tinder>h2 {
+  color: black;
+}
+
+#tinder > div > div.cardContainer > div {
+  position: absolute;
+}
+
+#tinder > div > div.cardContainer {
+  width: 90vw;
+  max-width: 260px;
+  height: 300px;
+}
+
+#tinder > div > div.cardContainer > div > div {
+  position: relative;
+  background-color: #fff;
+  width: 80vw;
+  max-width: 260px;
+  height: 300px;
+  box-shadow: 0px 0px 60px 0px rgba(0,0,0,0.30);
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+}
+
+#tinder .cardContent {
+  width: 100%;
+  height: 100%;
+}
+
+#tinder > div > div.cardContainer > div > div > h3 {
+  position: absolute;
+  bottom: 0;
+  margin: 10px;
+  color: #fff;
+}
+
+#tinder > div > h2 {
+  width: 100%;
+  height: 28px;
+  justify-content: center;
+  display: flex;
+  color: grey;
+  animation-name: popup;
+  animation-duration: 800ms;
+}
+
+#tinder > div > div.buttons {
+  margin: 20px;
+  display: flex;
+}
+
+#tinder > div > div.buttons > button {
+  flex-shrink: 0;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  background-color: #9198e5;
+  transition: 200ms;
+  margin: 0 10px;
+  font-weight: bolder;
+  width: 160px;
+  box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.10);
+}
+
+#tinder > div > div.buttons > button:hover {
+  transform: scale(1.05);
+}
+
+@keyframes popup {
+  0%   { transform: scale(1,1) }
+  10%  { transform: scale(1.1,1.1) }
+  30%  { transform: scale(.9,.9) }
+  50%  { transform: scale(1,1) }
+  57%  { transform: scale(1,1) }
+  64%  { transform: scale(1,1) }
+  100% { transform: scale(1,1) }
+}
+
+
+#settings .ui-w-80 {
+    width: 80px !important;
+    height: auto;
+}
+
+#settings .btn-default {
+    border-color: rgba(24,28,33,0.1);
+    background: rgba(0,0,0,0);
+    color: #4E5155;
+}
+
+#settings label.btn {
+    margin-bottom: 0;
+}
+
+#settings .btn-outline-primary {
+    border-color: #26B4FF;
+    background: transparent;
+    color: #26B4FF;
+}
+
+#settings .btn {
+    cursor: pointer;
+}
+
+#settings .text-light {
+    color: #babbbc !important;
+}
+
+#settings .btn-facebook {
+    border-color: rgba(0,0,0,0);
+    background: #3B5998;
+    color: #fff;
+}
+
+#settings .btn-instagram {
+    border-color: rgba(0,0,0,0);
+    background: #000;
+    color: #fff;
+}
+
+#settings .card {
+    background-clip: padding-box;
+    box-shadow: 0 1px 4px rgba(24,28,33,0.012);
+}
+
+#settings .row-bordered {
+    overflow: hidden;
+}
+
+#settings .account-settings-fileinput {
+    position: absolute;
+    visibility: hidden;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+#settings .account-settings-links .list-group-item.active {
+    font-weight: bold !important;
+}
+html:not(.dark-style) .account-settings-links .list-group-item.active {
+    background: transparent !important;
+}
+#settings .account-settings-multiselect ~ .select2-container {
+    width: 100% !important;
+}
+#settings .light-style .account-settings-links .list-group-item {
+    padding: 0.85rem 1.5rem;
+    border-color: rgba(24, 28, 33, 0.03) !important;
+}
+#settings .light-style .account-settings-links .list-group-item.active {
+    color: #4e5155 !important;
+}
+#settings .material-style .account-settings-links .list-group-item {
+    padding: 0.85rem 1.5rem;
+    border-color: rgba(24, 28, 33, 0.03) !important;
+}
+#settings .material-style .account-settings-links .list-group-item.active {
+    color: #4e5155 !important;
+}
+#settings .dark-style .account-settings-links .list-group-item {
+    padding: 0.85rem 1.5rem;
+    border-color: rgba(255, 255, 255, 0.03) !important;
+}
+#settings .dark-style .account-settings-links .list-group-item.active {
+    color: #fff !important;
+}
+#settings .light-style .account-settings-links .list-group-item.active {
+    color: #4E5155 !important;
+}
+#settings .light-style .account-settings-links .list-group-item {
+    padding: 0.85rem 1.5rem;
+    border-color: rgba(24,28,33,0.03) !important;
+}
+
+#settings {
+    padding-top: 5vh;
+    background:transparent;
+}
